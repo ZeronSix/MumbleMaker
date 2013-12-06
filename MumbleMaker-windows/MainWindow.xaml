@@ -1,0 +1,177 @@
+﻿<Window x:Class="MumbleMaker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mumble Maker" Height="720" Width="1280">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Menu>
+                <MenuItem Header="_File" 
+                                  StaysOpenOnClick="True">
+                    <MenuItem Header="_New Scene"
+                                      InputGestureText="Ctrl+N">
+                        <MenuItem.Icon>
+                            <Image Source="Images\Icons\new.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Open"
+                                      InputGestureText="Ctrl+O">
+                        <MenuItem.Icon>
+                            <Image Source="Images\Icons\open.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Save"
+                                      InputGestureText="Ctrl+S">
+                        <MenuItem.Icon>
+                            <Image Source="Images\Icons\save.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Save As..">
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Close">
+                        <MenuItem.Icon>
+                            <Image Source="Images\Icons\close.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Exit"
+                                      InputGestureText="Alt+F4">
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Edit"
+                                  StaysOpenOnClick="True">
+                    <MenuItem Header="_Preferences"
+                                      InputGestureText="Ctrl+P">
+                        <MenuItem.Icon>
+                            <Image Source="Images\Icons\gear.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="V_iew"
+                                  StaysOpenOnClick="True">
+                    <MenuItem Header="Show _Grid"
+                                      InputGestureText="Ctrl+G">
+                        <MenuItem.Icon>
+                            <Image Source="Images\Icons\grid.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Help"
+                                  StaysOpenOnClick="True">
+                    <MenuItem Header="About Mumble Maker"
+                              Name="mnu_AboutBox"
+                              Click="mnu_AboutBox_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Images\Icons\help.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <ToolBar IsHitTestVisible="True"
+                             Background="White">
+                <Button>
+                    <Image Source="Images\Icons\new.png"/>
+                </Button>
+                <Button>
+                    <Image Source="Images\Icons\open.png"/>
+                </Button>
+                <Button>
+                    <Image Source="Images\Icons\save.png"/>
+                </Button>
+                <Button>
+                    <Image Source="Images\Icons\close.png"/>
+                </Button>
+                <Separator/>
+                <Button>
+                    <Image Source="Images\Icons\gear.png"/>
+                </Button>
+                <Button>
+                    <Image Source="Images\Icons\grid.png"/>
+                </Button>
+                <Separator/>
+                <Button Click="mnu_AboutBox_Click">
+                    <Image Source="Images\Icons\help.png"/>
+                </Button>
+            </ToolBar>
+        </StackPanel>
+        <TabControl DockPanel.Dock="Top">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="testdoc.mms"/>
+                        <Button Background="Transparent"
+                                            BorderBrush="Transparent">
+                            <Image Source="Images\Icons\close.png"/>
+                        </Button>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <ToolBar DockPanel.Dock="Top"
+                                             Background="White">
+                            <Button>
+                                <Image Source="Images\Icons\add.png"/>
+                            </Button>
+                            <Button>
+                                <Image Source="Images\Icons\remove.png"/>
+                            </Button>
+                        </ToolBar>
+                        <Canvas Background="#FFEFF5F4">
+                        </Canvas>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Expander Header="Scene Properties"
+                                              Margin="5"
+                                              Padding="5"
+                                              BorderThickness="2">
+                            <DataGrid>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Property"
+                                                                Width="*"
+                                                                IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Value"
+                                                                Width="2*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Expander>
+                        <Expander Header="Characters"
+                                              Margin="5"
+                                              Padding="5"
+                                              BorderThickness="2">
+                            <StackPanel>
+                                <ToolBar DockPanel.Dock="Top"
+                                             Background="White">
+                                    <Button>
+                                        <Image Source="Images\Icons\add.png"/>
+                                    </Button>
+                                    <Button>
+                                        <Image Source="Images\Icons\remove.png"/>
+                                    </Button>
+                                </ToolBar>
+                            </StackPanel>
+                        </Expander>
+                        <Expander Header="Node Properties"
+                                              Margin="5"
+                                              Padding="5"
+                                              BorderThickness="2">
+                            <DataGrid>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Property"
+                                                                Width="*"
+                                                                IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Value"
+                                                                Width="2*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Expander>
+                    </StackPanel>
+                    <GridSplitter Width="2"
+                                              VerticalAlignment="Stretch" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
