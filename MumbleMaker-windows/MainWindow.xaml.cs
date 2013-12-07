@@ -13,19 +13,26 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MumbleMaker {
+namespace MumbleMaker 
+{
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window {
+    public partial class MainWindow : Window 
+    {
         public MainWindow() {
             InitializeComponent();
+            
         }
 
         private void mnu_AboutBox_Click(object sender, RoutedEventArgs e) {
             AboutBox box = new AboutBox();
             box.Owner = this;
             box.ShowDialog();
+        }
+
+        private void mnu_Exit_Click(object sender, RoutedEventArgs e) {
+            this.Close();
         }
     }
 }

@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="WPFFrontend.cs" />
     <Page Include="AboutBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +128,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MumbleMaker-core\MumbleMaker-core.csproj">
+      <Project>{80b11442-5fa4-45d7-9f71-a4c598ccb487}</Project>
+      <Name>MumbleMaker-core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
